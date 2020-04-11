@@ -6,7 +6,6 @@ from app.games.models import FuckYouGame
 
 
 class FuckYouGameModelTest(unittest.TestCase):
-
     deck = [Card(1), Card(2)]
     player = 'Player'
     other_player = 'OtherPlayer'
@@ -35,3 +34,8 @@ class FuckYouGameModelTest(unittest.TestCase):
         non_existing_player = 'NonExistingPlayer'
 
         self.assertRaises(PlayerNotFoundException, self.game.get_player, non_existing_player)
+
+
+class RideTheBusGameModelTest(unittest.TestCase):
+    # TODO
+    pass

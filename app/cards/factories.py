@@ -1,19 +1,29 @@
 from random import sample
 
+from injector import inject
+
 from app.cards.models import Card, Deck
 
 NORMAL_DECK_LENGTH = 52
 
 
-def create_card(value):
-    return Card(value)
+class CardFactory:
+    @staticmethod
+    def create(value):
+        return Card(value)
 
 
-def create_random_deck():
-    cards = []
-    values = sample(range(1, NORMAL_DECK_LENGTH + 1), NORMAL_DECK_LENGTH)
+class DeckFactory:
+    @inject
+    def __init__(self, card_factory: CardFactory):
+        self.card_factory = card_factory
 
-    for value in values:
-        cards.append(create_card(value))
+    def create(self):
+        cards = []
+        values = sample(range(1, NORMAL_DECK_LENGTH + 1), NORMAL_DECK_LENGTH)
 
-    return Deck(cards)
+        for value in values:
+            card = self.card_factory.create(value)
+            cards.append(card)
+
+        return Deck(cards)
