@@ -1,6 +1,14 @@
+from app.games.exceptions import PlayerNotFoundException, PlayerAlreadyAddedException
+
+
 class Player:
     def __init__(self, name):
         self.name = name
+
+    def __eq__(self, other):
+        if isinstance(other, Player):
+            return self.name == other.name
+        return False
 
 
 class Game:
@@ -24,13 +32,29 @@ class FuckYouGame(Game):
         super().__init__(deck)
         self.players = []
 
-    # TODO : Valide player not present
     def add_player(self, name):
+        player = self.get_player_if_present(name)
+
+        if player is not None:
+            raise PlayerAlreadyAddedException
+
         player = Player(name)
         self.players.append(player)
 
     def get_player(self, name):
-        return list(filter(lambda player: player.name == name, self.players))[0]
+        player = self.get_player_if_present(name)
+
+        if player is None:
+            raise PlayerNotFoundException
+
+        return player
+
+    def get_player_if_present(self, name):
+        for player in self.players:
+            if player.name == name:
+                return player
+
+        return None
 
     def draw(self, player):
         card = self.deck.draw()
