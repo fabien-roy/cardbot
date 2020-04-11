@@ -1,8 +1,5 @@
 from discord.ext import commands
 
-from app.games.factories import create_game
-from app.sessions.factories import create_session
-from app.sessions.models import Session
 from app.sessions.services import SessionService
 
 bot = commands.Bot(command_prefix='$')

@@ -1,4 +1,4 @@
-from app import create_game
+from app.games.factories import create_game
 from app.sessions.models import Session
 
 

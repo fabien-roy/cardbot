@@ -1,4 +1,4 @@
-from app import create_game, Session
+from app.sessions.factories import create_session
 
 
 class SessionService:
@@ -6,8 +6,7 @@ class SessionService:
 
     # TODO : Valide user not present
     def new_game(self, game_type):
-        game = create_game(game_type)
-        self.session = Session(game)
+        self.session = create_session(game_type)
         return self.session.game.type
 
     def add_user(self, name):

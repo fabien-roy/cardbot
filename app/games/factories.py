@@ -11,5 +11,5 @@ def create_game(game_type):
         return FuckYouGame(deck)
     if game_type == GameType.ride_the_bus.name:
         return RideTheBusGame(deck)
-    else:
-        raise GameTypeNotFoundException
+
+    raise GameTypeNotFoundException
