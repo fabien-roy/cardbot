@@ -19,4 +19,4 @@ class CardModelTest(unittest.TestCase):
     def test_draw_without_cards_should_raise_empty_deck_exception(self):
         deck = Deck([])
 
-        self.assertRaises(EmptyDeckException, deck.draw())
+        self.assertRaises(EmptyDeckException, deck.draw)

@@ -20,7 +20,7 @@ class FuckYouGameModelTest(unittest.TestCase):
 
         self.game.add_player(new_player)
 
-        self.assertEquals(new_player, self.game.get_player(new_player).name)
+        self.assertEqual(new_player, self.game.get_player(new_player).name)
 
     def test_add_player_with_existing_player_should_raise_player_already_added_exception(self):
         self.assertRaises(PlayerAlreadyAddedException, self.game.add_player, self.player)
@@ -28,7 +28,7 @@ class FuckYouGameModelTest(unittest.TestCase):
     def test_get_player_should_get_player(self):
         player = self.game.get_player(self.player)
 
-        self.assertEquals(self.player, player.name)
+        self.assertEqual(self.player, player.name)
 
     def test_add_player_with_non_existing_player_should_raise_player_not_found_exception(self):
         non_existing_player = 'NonExistingPlayer'

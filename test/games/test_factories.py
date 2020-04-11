@@ -30,4 +30,4 @@ class GameFactoryTest(unittest.TestCase):
     def test_create_with_invalid_game_type_should_throw_invalid_game_type_exception(self):
         game_type = 'invalid'
 
-        self.assertRaises(InvalidGameTypeException, self.factory.create(game_type))
+        self.assertRaises(InvalidGameTypeException, self.factory.create, game_type)
