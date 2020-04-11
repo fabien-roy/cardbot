@@ -1,0 +1,2 @@
+class GameTypeNotFoundException(Exception):
+    pass
