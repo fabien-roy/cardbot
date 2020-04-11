@@ -7,3 +7,6 @@ script:
 - nose2 -v --with-coverage test
 - pylint --output-format=text app
 - pylint --output-format=text test
+deploy:
+  api_key:
+    secure: HIS7lbCBU2CPugV65ymWvKn0zhXpmuolwog22sHILPt9bo77BdlzKx6kLFcSaSZe6QtLMZ2avBnsti0RrA63gMo9nc0JFZyzI46cir4R6N9WFiU+wOlFy858GdqeGpQwKL08m/sLxoRQFdFBMy/kz921jnqigG3gNVmXHQepoHke6WAiCVS4wj6XuwLhOi2II7ElIf1FUMiP5m/dULdYMxF17f9B87DAv0cxCy0Ddq9xLYW/TABDmhgA/ytD4oOprzNfnkZ4EIaups7CWT9rjgdm9nvTTIIQawGDCUpVsN4PsAhQJOVxtu8/N1lHXkQ5l1l6KSE3FWWBead4iv4L7RvjaRBZtusHPsy1w2Bmy8TfYKKFFYzygIeVKweJKTV3Z/JQw/68cywoxsdzuY4QoCgAK0uLXVH7+4kLKGBnCGZueIgY2uW2XiXEqS8/BiLyHQ+vXTzMTaufuMywBEIfvs5vQz4c63Y6WY/Ld0JiFOwqwn5uhZXeQsOzDYosI7JhM1z6sxFRO4O+iw1xTnrrh674e5anjlpMROHPtXrA8Oqcg/MQC9CTLhXmP+JTJzdM/dc0O/Qckx7Un6fQ5gt1Hj5WyX2/+l0BtG0rx1eNU7ND0aW2zx9dbFlW0hSvxdRW+qr8aUkfOXjBgcjHbaIjI/p7qduixQTZukiFL/Mtwkc=
