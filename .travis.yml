@@ -1,15 +1,14 @@
----
 language: python
 python:
-  - '3.8'
+- '3.8'
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-  - nose2 -v --with-coverage test
-  - pylint --output-format=text app
-  - pylint --output-format=text test
+- nose2 -v --with-coverage test
+- pylint --output-format=text app
+- pylint --output-format=text test
 deploy:
-  - provider: heroku
-    api_key:
-      secure: hghHC4PmEyJp4yvt4wo7cTa9W3hCVhkm88Xt7wK0egzjYMz5ytFizBF0mIS4oCcLa1sLkKXYrbAC4cZmpqIS+FILIzg+dC2o5y41hDoWOcI5swBhv0ZKfPIK/xz982NWl2fgnS56mmf6fM34mYZNE2KDL6z7m+pbHgiUJXv/PC66O0zke5NhedI/bhlgSrbL45W1GDMtIcQeBGTFvcvK2LemwPqkh7RZ4ci/wYeu4Qn+2Jtq84r8C1aGKV/Qf098CEOASYTVVOB8MqYuOLu3gDcMQ+5E3/z+mcJhO/HeE2hi0ia+Pp8YDmNlDMwW19Xf82+WszDzSKSmKOcYO3YPWdRA7p6N4iCJrK4IZDbmzAMUBptg4kz9OR0fSY4nKI8noVgYMFrDhke7m3ywhMRJkC2m/Kcgl1uWI1jEhugRTcM0Z45dHkphyylwAdH5idzqAeeuuwMzeU8aw0Uj8IzeaWkxRVDqTvrnUuEHEXXf0QLvQqAPgwFjG1zmU44GRkZ+iFiteY+VYYuUJMN7ROAKZJYou6re2IK8nsH2keEp37YKFt8aEpSr6I979DyIV1Edc7ltPXRm9N9spQ4abCU83pDiLPAu9QmID8Bv+KldirNQUf2NnjDx1LveOHOF9Ds4e3UA5OeC47sUQlxz70ilbTN2cuU+ixFYQ8E2wfdKElo=
-      app: discord-cardbot
+- provider: heroku
+  api_key:
+    secure: 3TghB+sKgBcDH9CMIMyD3NaUbjd5RfJv5zaWxM/eBoMj3mRHZhcDWm1l9CgZLrnq3AAVQv1/LaOdVWSS0K8XD68CQdwffJtc6OYgjk2LWdZpZ6T2/SbHxZU/DKDtGSdO2rW4ft/0lvDaoi8uohi0HplnQUWGfmGfiCMVscao6CwoED8iB8WWQmW8loTbVETYbg9m2DDmpkPVQqubUhKj3MwyqqF1ev8v5B8xbFNtnIYi9hOzJJ3X59ok9yeHFoYTMkchFslyrL36Dyf0jnJb8AS8fyLLhHS2TTb+QM02hsJauGUAgfmW+/I9u3fdEGh9twBmtP4nGq/HfTMfjn/WoWh3Ahe2d8VQaOioxuKsckTe2Fcl0AIFx4VCZ8v0ldWQebuoimgaa+EIU5GPbRDpNf2aOwyiGBfJ3w9Z+UfFlt1pqlwAwkb7QidiqXj3JkqYmbOMI0zDs1afmAHJe6TuTnkKVgBRnxLFDFT/LZFGFXIurbGzT0LOMobgxuCAjaRJgoE/uG+SbaVLmxht8GXsudPS58/H+M2pQ+1WwqiX2ZD+9c5BfopoDkcQM8GA8u5Otn6YfU0J6T37KwBoRny2MahlUh0goLjlMoNeVWwukUC5zzEdh60XR/r/rcAYjxBOOH0rTC1gYHvU1Jo47qxMqzu4lrmYhIU+ZzCHU4U3EDc=
+    app: discord-cardbot
