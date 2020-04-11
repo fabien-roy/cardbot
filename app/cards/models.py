@@ -7,4 +7,5 @@ class Deck:
 
 
 class Card:
-    pass
+    def __init__(self, value):
+        self.value = value
