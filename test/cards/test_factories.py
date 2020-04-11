@@ -1,6 +1,7 @@
 import unittest
 from unittest import mock
 
+from app.cards.enums import HouseValue, HouseSuit
 from app.cards.factories import NORMAL_DECK_LENGTH, DeckFactory
 from app.cards.models import Card
 

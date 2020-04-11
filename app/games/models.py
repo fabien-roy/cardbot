@@ -58,7 +58,8 @@ class FuckYouGame(Game):
 
     def draw(self, player):
         card = self.deck.draw()
-        return player.name, card.value
+        result = '{} of {}'.format(card.house_value.name, card.house_suit.name)
+        return player.name, result
 
 
 class RideTheBusGame(Game):

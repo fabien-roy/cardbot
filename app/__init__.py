@@ -29,5 +29,5 @@ async def add_me(ctx):
 
 @bot.command()
 async def draw(ctx):
-    name, value = session_service.draw(ctx.message.author.name)
-    await ctx.send('{} drawed value {}'.format(name, value))
+    name, result = session_service.draw(ctx.message.author.name)
+    await ctx.send('{} drawed : {}'.format(name, result))
