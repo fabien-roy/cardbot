@@ -14,7 +14,7 @@ class CardModelTest(unittest.TestCase):
 
         drawn_card = deck.draw()
 
-        self.assertEquals(drawn_card, self.other_card)
+        self.assertEqual(drawn_card, self.other_card)
 
     def test_draw_without_cards_should_raise_empty_deck_exception(self):
         deck = Deck([])

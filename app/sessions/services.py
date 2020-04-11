@@ -12,7 +12,7 @@ class SessionService:
 
     # TODO : Valide user not present
     def new_game(self, game_type):
-        self.session = self.session_factory.create_session(game_type)
+        self.session = self.session_factory.create(game_type)
         return self.session.game.type
 
     def add_user(self, name):
