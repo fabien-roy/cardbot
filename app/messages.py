@@ -5,6 +5,6 @@ def print_players_message(players):
     message = ''
 
     for player in players:
-        message += 'Player no #{} : {}'.format(player.no, player.name)
+        message += 'Player no #{} : @{}'.format(player.no, player.name)
 
     return message
