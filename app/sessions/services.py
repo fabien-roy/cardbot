@@ -11,7 +11,6 @@ class SessionService:
     def __init__(self, session_factory: SessionFactory):
         self.session_factory = session_factory
 
-    # TODO : Valide user not present
     def new_game(self, game_type):
         self.session = self.session_factory.create(game_type)
         return self.session.game.type
