@@ -27,7 +27,13 @@ async def new_game(ctx, arg):
 @bot.command()
 async def add_me(ctx):
     name = session_service.add_user(ctx.message.author.name)
-    await ctx.send('Added @{}'.format(name))
+    await ctx.send('Added {}'.format(name))
+
+
+@bot.command()
+async def add_player(ctx, name):
+    name = session_service.add_user(name)
+    await ctx.send('Added {}'.format(name))
 
 
 @bot.command()

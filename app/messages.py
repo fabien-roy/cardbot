@@ -6,7 +6,7 @@ def print_players_message(players):
 
     for player in players:
         in_game = 'in game' if player.in_game else 'has quit'
-        message += 'Player no #{} : @{} ({})'.format(player.no, player.name, in_game)
+        message += 'Player no #{} : @{} ({})\n'.format(player.no, player.name, in_game)
 
     return message
 
