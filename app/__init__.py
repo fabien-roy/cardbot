@@ -19,21 +19,36 @@ async def ping(ctx):
 
 
 @bot.command()
-async def new_game(ctx, arg):
-    game_type = session_service.new_game(arg)
+async def new_game(ctx, game_type, *names):
+    game_type = session_service.new_game(game_type)
     await ctx.send('Beginning a new game of {}!'.format(game_type))
+
+    if len(names) > 0:
+        await add_players(ctx, names)
 
 
 @bot.command()
 async def add_me(ctx):
-    name = session_service.add_user(ctx.message.author.name)
-    await ctx.send('Added {}'.format(name))
+    added_name = session_service.add_user(ctx.message.author.name)
+    await ctx.send('Added {}'.format(added_name))
 
 
 @bot.command()
 async def add_player(ctx, name):
-    name = session_service.add_user(name)
-    await ctx.send('Added {}'.format(name))
+    added_name = session_service.add_user(name)
+    await ctx.send('Added {}'.format(added_name))
+
+
+@bot.command()
+async def add_players(ctx, *names):
+    names = names[0]
+    added_names = ''
+
+    for i in range(0, len(names)):
+        name = session_service.add_user(names[i])
+        added_names += '{}, '.format(name) if i + 1 < len(names) else name
+
+    await ctx.send('Added {}'.format(added_names))
 
 
 @bot.command()
