@@ -21,6 +21,12 @@ class Session:
         self.users.append(user)
         self.game.add_player(user.name)
 
+    def remove_user(self, name):
+        user = self.get_user(name)
+
+        self.users.remove(user)
+        self.game.remove_player(user.name)
+
     def get_user(self, name):
         user = self.get_user_if_present(name)
 

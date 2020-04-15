@@ -72,7 +72,6 @@ class OrderedGame(Game):
         super().add_player(name)
         self.increment_current_order_no()
 
-    # TODO : Unused
     def remove_player(self, name):
         super().remove_player(name)
         self.decrement_current_order_no()

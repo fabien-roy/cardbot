@@ -20,6 +20,10 @@ class SessionService:
         self.session.add_user(name)
         return name
 
+    def remove_user(self, name):
+        self.session.remove_user(name)
+        return name
+
     def get_players(self):
         if self.session is None:
             raise SessionNotStartedException

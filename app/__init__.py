@@ -52,6 +52,30 @@ async def add_players(ctx, *names):
 
 
 @bot.command()
+async def remove_me(ctx):
+    removed_name = session_service.remove_user(ctx.message.author.name)
+    await ctx.send('Removed {}'.format(removed_name))
+
+
+@bot.command()
+async def remove_player(ctx, name):
+    removed_name = session_service.remove_user(name)
+    await ctx.send('Removed {}'.format(removed_name))
+
+
+@bot.command()
+async def remove_players(ctx, *names):
+    names = names[0]
+    removed_names = ''
+
+    for i in range(0, len(names)):
+        name = session_service.remove_user(names[i])
+        removed_names += '{}, '.format(name) if i + 1 < len(names) else name
+
+    await ctx.send('Removed {}'.format(removed_names))
+
+
+@bot.command()
 async def print_players(ctx):
     players = session_service.get_players()
     await ctx.send(print_players_message(players))

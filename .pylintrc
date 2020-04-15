@@ -4,6 +4,7 @@ disable=
     C0114, # missing-module-docstring
     C0115, # missing-class-docstring
     C0116, # missing-function-docstring
+    C0200, # consider-using-enumerate
     R0201, # no-self-use
     R0903, # too-few-public-methods
     R1710, # inconsistent-return-statements TODO : Fix this one

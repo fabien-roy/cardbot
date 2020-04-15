@@ -5,7 +5,7 @@ from discord.ext import commands
 
 # Props to : https://gist.github.com/EvieePy/7822af90858ef65012ea500bcecf1612
 
-from app.sessions.exceptions import SessionNotStartedException
+from app.sessions.exceptions import SessionNotStartedException, UserNotFoundException
 
 
 # TODO : One error handler per package
@@ -26,6 +26,9 @@ class CommandErrorHandler(commands.Cog):
 
         if isinstance(error, ignored):
             return
+
+        if isinstance(error, UserNotFoundException):
+            return await ctx.send('User not found!')
 
         if isinstance(error, SessionNotStartedException):
             return await ctx.send('Session must be started! Try $new_game')
