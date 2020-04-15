@@ -1,11 +1,10 @@
-import unittest
-
-from app.cards.models import Card
+from app.cards.models.cards import Card
 from app.games.exceptions import PlayerAlreadyAddedException, PlayerNotFoundException
-from app.games.domain import Game
+from app.games.models.game import Game
+from tests.test_basic import BasicTest
 
 
-class GameModelTest(unittest.TestCase):
+class GameModelTest(BasicTest):
     deck = [Card(1), Card(2)]
     player = 'Player'
     other_player = 'OtherPlayer'
@@ -34,13 +33,3 @@ class GameModelTest(unittest.TestCase):
         non_existing_player = 'NonExistingPlayer'
 
         self.assertRaises(PlayerNotFoundException, self.game.get_player, non_existing_player)
-
-
-class FuckYouGameModelTest(unittest.TestCase):
-    # TODO
-    pass
-
-
-class RideTheBusGameModelTest(unittest.TestCase):
-    # TODO
-    pass

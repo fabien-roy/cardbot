@@ -1,16 +1,12 @@
-import unittest
-from unittest import mock
-
-from app.cards.factories import NORMAL_DECK_LENGTH, DeckFactory
-from app.cards.models import Card
+from app.cards.factories.deck_factories import DeckFactory
+from app.cards.models.cards import NORMAL_DECK_LENGTH
+from tests.test_basic import BasicTest
 
 
-class DeckFactoryTest(unittest.TestCase):
+class DeckFactoryTest(BasicTest):
 
     def setUp(self):
-        card_factory = mock.Mock()
-        card_factory.create.side_effect = lambda value: Card(value)
-        self.factory = DeckFactory(card_factory)
+        self.factory = DeckFactory()
 
     def test_create_should_create_without_duplicate(self):
         deck = self.factory.create()

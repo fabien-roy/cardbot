@@ -1,10 +1,10 @@
-import unittest
-
 from app.cards.exceptions import EmptyDeckException
-from app.cards.models import Card, Deck
+from app.cards.models.cards import Card
+from app.cards.models.decks import Deck
+from tests.test_basic import BasicTest
 
 
-class CardModelTest(unittest.TestCase):
+class CardTest(BasicTest):
 
     card = Card(1)
     other_card = Card(2)

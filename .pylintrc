@@ -5,10 +5,13 @@ disable=
     C0115, # missing-class-docstring
     C0116, # missing-function-docstring
     C0200, # consider-using-enumerate
+    C0413, # wrong-import-position TODO : Fix this one (injector in app)
     R0201, # no-self-use
     R0903, # too-few-public-methods
     R1710, # inconsistent-return-statements TODO : Fix this one
     W0511, # fixme
     W0108, # unnecessary-lambda
     W0603, # global-state TODO : Fix this one
+    W0612, # unused-variable TODO : Fix this one (command functions)
+    W0613, # unused-argument TODO : Fix this one (bindings)
 

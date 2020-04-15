@@ -1,3 +1,3 @@
 # TODO : Is this useful?
-def bindings(binder):
+def config(binder):
     pass

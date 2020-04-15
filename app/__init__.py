@@ -1,11 +1,11 @@
 import inject
 from discord.ext import commands
 
-from app.bindings import bindings
+from app.bindings import config
 
 bot = commands.Bot(command_prefix='$')
 
-inject.configure(bindings)
+inject.configure(config)
 
 # TODO : Fix injector
 from app.ui.commands import register_commands

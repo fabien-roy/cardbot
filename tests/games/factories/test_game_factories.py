@@ -1,17 +1,15 @@
-import unittest
-from unittest import mock
-
-from app.games.enums import GameType
+from app.games.enums.game_types import GameType
 from app.games.exceptions import InvalidGameTypeException
-from app.games.factories import GameFactory
-from app.games.domain import FuckYouGame, RideTheBusGame
+from app.games.factories.game_factory import GameFactory
+from app.games.models.fuck_you_game import FuckYouGame
+from app.games.models.ride_the_bus_game import RideTheBusGame
+from tests.test_basic import BasicTest
 
 
-class GameFactoryTest(unittest.TestCase):
+class GameFactoryTest(BasicTest):
 
     def setUp(self):
-        deck_factory = mock.Mock()
-        self.factory = GameFactory(deck_factory)
+        self.factory = GameFactory()
 
     def test_create_with_fuck_you_should_create_fuck_you(self):
         game_type = GameType.fuck_you.name

@@ -1,6 +1,6 @@
 import inject
 
-from app.sessions.services import SessionService
+from app.sessions.services.session_services import SessionService
 from app.sessions.ui.messages import print_players_message, draw_message, add_player_message, \
     add_players_message, remove_player_message, remove_players_message, new_game_message
 
