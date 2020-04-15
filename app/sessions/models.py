@@ -34,6 +34,9 @@ class Session:
             if user.name == name:
                 return user
 
+    def get_players(self):
+        return self.game.get_players()
+
     def draw(self, user):
         player = self.game.get_player(user.name)
         return self.game.draw(player)

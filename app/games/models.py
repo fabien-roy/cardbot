@@ -2,34 +2,20 @@ from app.games.exceptions import PlayerNotFoundException, PlayerAlreadyAddedExce
 
 
 class Player:
-    def __init__(self, name):
+    def __init__(self, no, name):
+        self.no = no
         self.name = name
 
     def __eq__(self, other):
         if isinstance(other, Player):
-            return self.name == other.name
+            return self.no == other.no and self.name == other.name
         return False
 
 
+# TODO : Separate Game from CardGame
 class Game:
     def __init__(self, deck):
         self.deck = deck
-
-    def add_player(self, name):
-        pass
-
-    def get_player(self, name):
-        pass
-
-    def draw(self, player):
-        pass
-
-
-class FuckYouGame(Game):
-    type = 'Fuck you'
-
-    def __init__(self, deck):
-        super().__init__(deck)
         self.players = []
 
     def add_player(self, name):
@@ -38,8 +24,9 @@ class FuckYouGame(Game):
         if player is not None:
             raise PlayerAlreadyAddedException
 
-        player = Player(name)
+        player = Player(self.next_player_no(), name)
         self.players.append(player)
+        return player
 
     def get_player(self, name):
         player = self.get_player_if_present(name)
@@ -55,6 +42,22 @@ class FuckYouGame(Game):
                 return player
 
         return None
+
+    def get_players(self):
+        return self.players
+
+    def draw(self, player):
+        pass
+
+    def next_player_no(self):
+        return len(self.players) + 1
+
+
+class FuckYouGame(Game):
+    type = 'Fuck you'
+
+    def __init__(self, deck):
+        super().__init__(deck)
 
     def draw(self, player):
         card = self.deck.draw()
@@ -72,18 +75,13 @@ class RideTheBusGame(Game):
 
     # TODO : Valide dealer
     def set_dealer(self, name):
-        self.dealer = Player(name)
+        self.dealer = super().add_player(name)
+        self.players.append(self.dealer)
 
     # TODO : Valide add player
     def add_player(self, name):
-        self.player = Player(name)
-
-    # TODO : Throw exception if wrong name
-    def get_player(self, name):
-        if name == self.player.name:
-            return self.player
-
-        return None
+        self.player = super().add_player(name)
+        self.players.append(self.player)
 
     # TODO
     def draw(self, player):

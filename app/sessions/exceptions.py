@@ -1,3 +1,7 @@
+class SessionNotStartedException(Exception):
+    pass
+
+
 class UserAlreadyAddedException(Exception):
     pass
 

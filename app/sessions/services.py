@@ -1,5 +1,6 @@
 from injector import inject
 
+from app.sessions.exceptions import SessionNotStartedException
 from app.sessions.factories import SessionFactory
 
 
@@ -18,6 +19,12 @@ class SessionService:
     def add_user(self, name):
         self.session.add_user(name)
         return name
+
+    def get_players(self):
+        if self.session is None:
+            raise SessionNotStartedException
+
+        return self.session.get_players()
 
     def draw(self, name):
         user = self.session.get_user(name)

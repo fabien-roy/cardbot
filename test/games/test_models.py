@@ -2,16 +2,16 @@ import unittest
 
 from app.cards.models import Card
 from app.games.exceptions import PlayerAlreadyAddedException, PlayerNotFoundException
-from app.games.models import FuckYouGame
+from app.games.models import Game
 
 
-class FuckYouGameModelTest(unittest.TestCase):
+class GameModelTest(unittest.TestCase):
     deck = [Card(1), Card(2)]
     player = 'Player'
     other_player = 'OtherPlayer'
 
     def setUp(self):
-        self.game = FuckYouGame(self.deck)
+        self.game = Game(self.deck)
         self.game.add_player(self.player)
         self.game.add_player(self.other_player)
 
@@ -34,6 +34,11 @@ class FuckYouGameModelTest(unittest.TestCase):
         non_existing_player = 'NonExistingPlayer'
 
         self.assertRaises(PlayerNotFoundException, self.game.get_player, non_existing_player)
+
+
+class FuckYouGameModelTest(unittest.TestCase):
+    # TODO
+    pass
 
 
 class RideTheBusGameModelTest(unittest.TestCase):
