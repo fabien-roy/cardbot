@@ -2,7 +2,7 @@ from discord.ext import commands
 
 from app.bindings import session_service
 from app.error_handler import register_error_handler
-from app.messages import print_players_message
+from app.messages import print_players_message, draw_message
 
 bot = commands.Bot(command_prefix='$')
 register_error_handler(bot)
@@ -38,5 +38,5 @@ async def print_players(ctx):
 
 @bot.command()
 async def draw(ctx):
-    name, result = session_service.draw(ctx.message.author.name)
-    await ctx.send('{} drawed : {}'.format(name, result))
+    name, result = session_service.draw()
+    await ctx.send(draw_message(name, result))

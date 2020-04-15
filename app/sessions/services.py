@@ -26,6 +26,5 @@ class SessionService:
 
         return self.session.get_players()
 
-    def draw(self, name):
-        user = self.session.get_user(name)
-        return self.session.draw(user)
+    def draw(self):
+        return self.session.draw()

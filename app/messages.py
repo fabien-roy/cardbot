@@ -5,6 +5,11 @@ def print_players_message(players):
     message = ''
 
     for player in players:
-        message += 'Player no #{} : @{}'.format(player.no, player.name)
+        in_game = 'in game' if player.in_game else 'has quit'
+        message += 'Player no #{} : @{} ({})'.format(player.no, player.name, in_game)
 
     return message
+
+
+def draw_message(name, result):
+    return '{} drawed : {}'.format(name, result)

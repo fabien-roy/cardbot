@@ -37,6 +37,5 @@ class Session:
     def get_players(self):
         return self.game.get_players()
 
-    def draw(self, user):
-        player = self.game.get_player(user.name)
-        return self.game.draw(player)
+    def draw(self):
+        return self.game.draw()
