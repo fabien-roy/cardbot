@@ -25,4 +25,11 @@ jobs:
       - name: Lint tests
         run: pylint --output-format=text tests
       - name: Unit tests
-        run: nose2 -v --with-coverage tests
+        run: coverage run -m nose2 tests
+      - name: Generate coverage report
+        run: coverage xml
+      - name: Upload code coverage to codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
