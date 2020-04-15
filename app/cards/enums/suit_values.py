@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class HouseValue(Enum):
+class SuitValue(Enum):
     ace = 1
     two = 2
     three = 3
@@ -15,10 +15,3 @@ class HouseValue(Enum):
     jack = 11
     queen = 12
     king = 13
-
-
-class HouseSuit(Enum):
-    clubs = 1
-    spaces = 2
-    diamonds = 3
-    hearts = 4

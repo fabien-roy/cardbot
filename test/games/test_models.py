@@ -2,7 +2,7 @@ import unittest
 
 from app.cards.models import Card
 from app.games.exceptions import PlayerAlreadyAddedException, PlayerNotFoundException
-from app.games.models import Game
+from app.games.domain import Game
 
 
 class GameModelTest(unittest.TestCase):

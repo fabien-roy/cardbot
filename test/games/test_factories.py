@@ -4,7 +4,7 @@ from unittest import mock
 from app.games.enums import GameType
 from app.games.exceptions import InvalidGameTypeException
 from app.games.factories import GameFactory
-from app.games.models import FuckYouGame, RideTheBusGame
+from app.games.domain import FuckYouGame, RideTheBusGame
 
 
 class GameFactoryTest(unittest.TestCase):

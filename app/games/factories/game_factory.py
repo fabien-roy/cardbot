@@ -1,9 +1,10 @@
 import inject
 
-from app.cards.factories import DeckFactory
-from app.games.enums import GameType
+from app.cards.factories.deck_factories import DeckFactory
+from app.games.enums.game_types import GameType
 from app.games.exceptions import InvalidGameTypeException
-from app.games.models import FuckYouGame, RideTheBusGame
+from app.games.models.fuck_you_game import FuckYouGame
+from app.games.models.ride_the_bus_game import RideTheBusGame
 
 
 class GameFactory:

@@ -1,8 +1,7 @@
 from math import floor
 
-from app.cards.enums import HouseSuit, HouseValue
-from app.cards.exceptions import EmptyDeckException
-
+from app.cards.enums.suit_house import SuitHouse
+from app.cards.enums.suit_values import SuitValue
 
 NORMAL_HOUSE_LENGTH = 13
 NORMAL_DECK_LENGTH = 52
@@ -19,9 +18,9 @@ class Card:
         house_suit = floor(value / NORMAL_HOUSE_LENGTH)
 
         if value == NORMAL_DECK_LENGTH:
-            return HouseSuit(house_suit)
+            return SuitHouse(house_suit)
 
-        return HouseSuit(house_suit + 1)
+        return SuitHouse(house_suit + 1)
 
     @staticmethod
     def create_house_value(value):
@@ -30,15 +29,4 @@ class Card:
         while house_value > NORMAL_HOUSE_LENGTH:
             house_value = house_value - NORMAL_HOUSE_LENGTH
 
-        return HouseValue(house_value)
-
-
-class Deck:
-    def __init__(self, cards):
-        self.cards = cards
-
-    def draw(self):
-        if len(self.cards) == 0:
-            raise EmptyDeckException
-
-        return self.cards.pop()
+        return SuitValue(house_value)

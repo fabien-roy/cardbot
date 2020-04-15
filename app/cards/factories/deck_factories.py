@@ -2,12 +2,9 @@ from random import sample
 
 import inject
 
-from app.cards.models import Card, Deck, NORMAL_DECK_LENGTH
-
-
-class CardFactory:
-    def create(self, value):
-        return Card(value)
+from app.cards.factories.card_factories import CardFactory
+from app.cards.models.cards import NORMAL_DECK_LENGTH
+from app.cards.models.decks import Deck
 
 
 class DeckFactory:

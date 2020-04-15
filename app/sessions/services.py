@@ -1,7 +1,7 @@
 import inject
 
 from app.sessions.exceptions import SessionNotStartedException
-from app.sessions.factories import SessionFactory
+from app.sessions.factories.session_factories import SessionFactory
 
 
 class SessionService:

@@ -1,4 +1,4 @@
-class InvalidGameTypeException(Exception):
+class PlayerNotFoundException(Exception):
     pass
 
 
@@ -6,5 +6,5 @@ class PlayerAlreadyAddedException(Exception):
     pass
 
 
-class PlayerNotFoundException(Exception):
+class InvalidGameTypeException(Exception):
     pass
