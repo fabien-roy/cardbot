@@ -1,14 +1,19 @@
+import inject
 from discord.ext import commands
 
-from app.bindings import session_service
-from app.error_handler import register_error_handler
-from app.messages import print_players_message, draw_message
-from app.sessions.ui.commands import register_sessions_commands
+from app.bindings import bindings
 
 bot = commands.Bot(command_prefix='$')
-register_error_handler(bot)
 
-register_sessions_commands(bot)
+inject.configure(bindings)
+
+# TODO : Fix injector
+from app.ui.commands import register_commands
+from app.ui.error_handler import register_error_handlers
+
+register_commands(bot)
+register_error_handlers(bot)
+
 
 @bot.event
 async def on_ready():

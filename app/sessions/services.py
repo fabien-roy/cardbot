@@ -1,4 +1,4 @@
-from injector import inject
+import inject
 
 from app.sessions.exceptions import SessionNotStartedException
 from app.sessions.factories import SessionFactory
@@ -6,10 +6,7 @@ from app.sessions.factories import SessionFactory
 
 class SessionService:
     session = None
-
-    @inject
-    def __init__(self, session_factory: SessionFactory):
-        self.session_factory = session_factory
+    session_factory = inject.attr(SessionFactory)
 
     def new_game(self, game_type):
         self.session = self.session_factory.create(game_type)

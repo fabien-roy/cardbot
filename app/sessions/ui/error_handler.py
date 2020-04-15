@@ -8,7 +8,7 @@ from discord.ext import commands
 from app.sessions.exceptions import SessionNotStartedException, UserNotFoundException
 
 
-class SessionCommandErrorHandler(commands.Cog):
+class SessionErrorHandler(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -36,5 +36,5 @@ class SessionCommandErrorHandler(commands.Cog):
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
 
 
-def register_error_handler(bot):
-    bot.add_cog(CommandErrorHandler(bot))
+def register_session_error_handler(bot):
+    bot.add_cog(SessionErrorHandler(bot))

@@ -1,6 +1,6 @@
 from random import sample
 
-from injector import inject
+import inject
 
 from app.cards.models import Card, Deck, NORMAL_DECK_LENGTH
 
@@ -11,9 +11,7 @@ class CardFactory:
 
 
 class DeckFactory:
-    @inject
-    def __init__(self, card_factory: CardFactory):
-        self.card_factory = card_factory
+    card_factory = inject.attr(CardFactory)
 
     def create(self):
         cards = []

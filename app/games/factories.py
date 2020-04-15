@@ -1,4 +1,4 @@
-from injector import inject
+import inject
 
 from app.cards.factories import DeckFactory
 from app.games.enums import GameType
@@ -7,9 +7,7 @@ from app.games.models import FuckYouGame, RideTheBusGame
 
 
 class GameFactory:
-    @inject
-    def __init__(self, deck_factory: DeckFactory):
-        self.deck_factory = deck_factory
+    deck_factory = inject.attr(DeckFactory)
 
     def create(self, game_type):
         deck = self.deck_factory.create()
