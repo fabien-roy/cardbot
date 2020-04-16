@@ -13,14 +13,12 @@ class SessionServiceTest(BasicTest):
     game_type = create_game_type()
     user = a_user().build()
 
-    @classmethod
-    def setUpClass(cls):
-        cls.service = SessionService()
-        cls.service.new_game(cls.game_type.name)
-
     def setUp(self):
         self.mock_session.game = a_game().with_type(self.game_type).build()
         mock_session_factory.create.side_effect = lambda game_type: self.mock_session
+
+        self.service = SessionService()
+        self.service.new_game(self.game_type.name)
 
     def test_new_game_should_return_game_type(self):
         actual_game_type = self.service.new_game(self.game_type.name)
