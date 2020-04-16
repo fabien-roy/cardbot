@@ -23,9 +23,32 @@ class SessionServiceTest(BasicTest):
     def test_new_game_should_return_game_type(self):
         actual_game_type = self.service.new_game(self.game_type.name)
 
-        self.assertEquals(self.game_type.value, actual_game_type)
+        self.assertEqual(self.game_type.value, actual_game_type)
 
     def test_add_user_should_add_user_to_session(self):
         self.service.add_user(self.user.name)
 
         self.mock_session.add_user.assert_called_with(self.user.name)
+
+    def test_add_user_should_return_user_name(self):
+        name = self.service.add_user(self.user.name)
+
+        self.assertEqual(self.user.name, name)
+
+    # TODO : Add users tests
+
+    def test_remove_user_should_remove_user_from_session(self):
+        self.service.remove_user(self.user.name)
+
+        self.mock_session.remove_user.assert_called_with(self.user.name)
+
+    def test_remove_user_should_return_user_name(self):
+        name = self.service.remove_user(self.user.name)
+
+        self.assertEqual(self.user.name, name)
+
+    # TODO : Remove users tests
+
+    # TODO : Get players tests
+
+    # TODO : Draw
