@@ -1,8 +1,9 @@
+from app.games.enums.game_types import GameType
 from app.games.models.game import Game
 
 
 class RideTheBusGame(Game):
-    type = 'Ride the bus'
+    type = GameType.ride_the_bus.value
 
     def __init__(self, deck):
         super().__init__(deck)

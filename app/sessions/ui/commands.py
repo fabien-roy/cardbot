@@ -29,12 +29,7 @@ def register_sessions_commands(bot):
 
     @bot.command()
     async def add_players(ctx, *names):
-        added_names = []
-
-        for name in names[0]:
-            name = session_service.add_user(name)
-            added_names.append(name)
-
+        added_names = session_service.add_users(names[0])
         await ctx.send(add_players_message(added_names))
 
     @bot.command()
@@ -49,12 +44,7 @@ def register_sessions_commands(bot):
 
     @bot.command()
     async def remove_players(ctx, *names):
-        removed_names = []
-
-        for name in names:
-            name = session_service.remove_user(name)
-            removed_names.append(name)
-
+        removed_names = session_service.remove_users(names[0])
         await ctx.send(remove_players_message(removed_names))
 
     @bot.command()

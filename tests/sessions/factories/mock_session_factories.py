@@ -1,4 +1,4 @@
 from unittest.mock import Mock
 
+mock_session_factory = Mock()
 
-mock_deck_factory = Mock()

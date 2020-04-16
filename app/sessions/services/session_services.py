@@ -16,9 +16,17 @@ class SessionService:
         self.session.add_user(name)
         return name
 
+    def add_users(self, names):
+        self.session.add_users(names)
+        return names
+
     def remove_user(self, name):
         self.session.remove_user(name)
         return name
+
+    def remove_users(self, names):
+        self.session.remove_users(names)
+        return names
 
     def get_players(self):
         if self.session is None:

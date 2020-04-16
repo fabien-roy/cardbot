@@ -2,5 +2,5 @@ from enum import Enum
 
 
 class GameType(Enum):
-    fuck_you = 1
-    ride_the_bus = 2
+    fuck_you = 'Fuck you'
+    ride_the_bus = 'Ride the bus'

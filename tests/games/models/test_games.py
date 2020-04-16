@@ -4,7 +4,7 @@ from app.games.models.game import Game
 from tests.test_basic import BasicTest
 
 
-class GameModelTest(BasicTest):
+class GameTest(BasicTest):
     deck = [Card(1), Card(2)]
     player = 'Player'
     other_player = 'OtherPlayer'
