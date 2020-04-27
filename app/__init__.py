@@ -17,7 +17,7 @@ register_error_handlers(bot)
 
 @bot.event
 async def on_ready():
-    print(f'Cardbot has connected to Discord!')
+    print('Cardbot has connected to Discord!')
 
 
 @bot.command()
