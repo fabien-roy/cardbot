@@ -10,12 +10,14 @@ from tests.test_basic import BasicTest
 
 class SessionServiceTest(BasicTest):
     mock_session = Mock()
+    mock_drawn = Mock()
     game_type = create_game_type()
     user = a_user().build()
     other_user = a_user().build()
 
     def setUp(self):
         self.mock_session.game = a_game().with_type(self.game_type).build()
+        self.mock_session.draw.return_value = self.mock_drawn
         mock_session_factory.create.side_effect = lambda game_type: self.mock_session
 
         self.service = SessionService()
@@ -78,4 +80,7 @@ class SessionServiceTest(BasicTest):
 
     # TODO : Get players tests
 
-    # TODO : Draw
+    def test_draw_should_drawn_from_game(self):
+        drawn = self.service.draw()
+
+        self.assertEqual(self.mock_drawn, drawn)
