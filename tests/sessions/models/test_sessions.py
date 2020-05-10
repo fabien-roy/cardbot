@@ -1,45 +1,57 @@
+from unittest.mock import Mock
+
+from app.sessions.exceptions import UserAlreadyAddedException
 from app.sessions.models.sessions import Session
-from tests.games.models.build_games import a_game
+from tests.sessions.models.build_users import a_user
 from tests.test_basic import BasicTest
 
 
-class SessionServiceTest(BasicTest):
+class SessionTest(BasicTest):
+    mock_game = Mock()
+    user = a_user().build()
+    other_user = a_user().build()
+
     def setUp(self):
-        game = a_game().build()
+        self.session = Session(self.mock_game)
 
-        self.session = Session(game)
+    def test_add_user_should_add_user(self):
+        self.session.add_user(self.user.name)
 
-    def test_add_user_should_add_user_to_users(self):
-        pass
+        self.assertEqual(1, len(self.session.users))
+        self.assertEqual(self.user.name, self.session.users[0].name)
 
-    def test_add_user_should_add_user_to_game(self):
-        pass
+    def test_add_user_should_add_player_to_game(self):
+        self.session.add_user(self.user.name)
+
+        self.mock_game.add_player.assert_called_with(self.user.name)
 
     def test_add_user_with_already_added_user_should_raise_user_already_added_exception(self):
+        self.session.add_user(self.user.name)
+
+        self.assertRaises(UserAlreadyAddedException, self.session.add_user, self.user.name)
+
+    def test_add_users_should_add_users(self):
         pass
 
-    def test_add_users_should_add_users_to_users(self):
-        pass
-
-    def test_add_users_should_add_users_to_game(self):
+    def test_add_users_should_add_players_to_game(self):
         pass
 
     def test_add_users_with_already_added_user_should_raise_user_already_added_exception(self):
         pass
 
-    def test_remove_user_should_remove_user_from_users(self):
+    def test_remove_user_should_remove_user(self):
         pass
 
-    def test_remove_user_should_remove_user_from_game(self):
+    def test_remove_user_should_remove_player_from_game(self):
         pass
 
     def test_remove_user_with_nonexistent_user_should_raise_user_not_found_exception(self):
         pass
 
-    def test_remove_users_should_remove_users_from_users(self):
+    def test_remove_users_should_remove_users(self):
         pass
 
-    def test_remove_users_should_remove_users_from_game(self):
+    def test_remove_users_should_remove_players_from_game(self):
         pass
 
     def test_remove_users_with_nonexistent_user_should_raise_user_not_found_exception(self):
