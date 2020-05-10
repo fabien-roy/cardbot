@@ -7,9 +7,8 @@ def a_session():
 
 
 class SessionBuilder:
-
-    default_game = create_game()
-    game = default_game
+    def __init__(self):
+        self.game = create_game()
 
     def with_game(self, game):
         self.game = game

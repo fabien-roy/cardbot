@@ -1,4 +1,4 @@
-from unittest.mock import Mock
+from unittest.mock import Mock, call
 
 from app.sessions.exceptions import UserAlreadyAddedException
 from app.sessions.models.sessions import Session
@@ -31,13 +31,28 @@ class SessionTest(BasicTest):
         self.assertRaises(UserAlreadyAddedException, self.session.add_user, self.user.name)
 
     def test_add_users_should_add_users(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+
+        self.session.add_users(users)
+
+        self.assertEqual(2, len(self.session.users))
+        self.assertEqual(self.user.name, self.session.users[0].name)
+        self.assertEqual(self.other_user.name, self.session.users[1].name)
 
     def test_add_users_should_add_players_to_game(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+
+        self.session.add_users(users)
+
+        calls = [call(self.user.name), call(self.other_user.name)]
+        self.mock_game.add_player.assert_has_calls(calls)
 
     def test_add_users_with_already_added_user_should_raise_user_already_added_exception(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+
+        self.session.add_users(users)
+
+        self.assertRaises(UserAlreadyAddedException, self.session.add_users, users)
 
     def test_remove_user_should_remove_user(self):
         pass

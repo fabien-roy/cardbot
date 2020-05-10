@@ -7,9 +7,8 @@ def a_user():
 
 
 class UserBuilder:
-
-    default_name = create_name()
-    name = default_name
+    def __init__(self):
+        self.name = create_name()
 
     def with_name(self, name):
         self.name = name

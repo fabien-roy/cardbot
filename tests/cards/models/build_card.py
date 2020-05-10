@@ -7,9 +7,8 @@ def a_card():
 
 
 class CardBuilder:
-
-    default_value = create_value()
-    value = default_value
+    def __init__(self):
+        self.value = create_value()
 
     def with_value(self, value):
         self.value = value

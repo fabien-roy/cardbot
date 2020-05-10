@@ -10,11 +10,9 @@ def a_game():
 
 class GameBuilder:
 
-    default_deck = create_deck()
-    deck = default_deck
-
-    default_game_type = create_game_type()
-    game_type = default_game_type
+    def __init__(self):
+        self.deck = create_deck()
+        self.game_type = create_game_type()
 
     def with_deck(self, deck):
         self.deck = deck

@@ -7,9 +7,8 @@ def a_deck():
 
 
 class DeckBuilder:
-
-    default_cards = create_cards()
-    cards = default_cards
+    def __init__(self):
+        self.cards = create_cards()
 
     def with_cards(self, cards):
         self.cards = cards
