@@ -4,7 +4,6 @@ from app.games.exceptions import PlayerNotFoundException, PlayerAlreadyAddedExce
 from app.games.models.players import Player
 
 
-# TODO : Separate Game from CardGame
 class Game:
     def __init__(self, deck):
         self.deck = deck

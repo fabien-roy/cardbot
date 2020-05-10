@@ -8,4 +8,10 @@
 
 Hi! Isolation is shit. This might help you!
 
-TODO
+Basically, I'm trying to do a somewhat domain-driven application about cards and games and card games and it's a discord bot.
+
+I'm doing this more as a small personal challenge than anything else. Feel free to help or ask for a feature.
+
+## Commands
+
+TODO : Place commands here

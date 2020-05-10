@@ -7,7 +7,6 @@ bot = commands.Bot(command_prefix='$')
 
 inject.configure(config)
 
-# TODO : Fix injector
 from app.ui.commands import register_commands
 from app.ui.error_handler import register_error_handlers
 
