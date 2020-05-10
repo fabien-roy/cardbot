@@ -8,10 +8,15 @@ from tests.test_basic import BasicTest
 
 class SessionTest(BasicTest):
     mock_game = Mock()
+    mock_players = Mock()
+    mock_drawn = Mock()
     user = a_user().build()
     other_user = a_user().build()
 
     def setUp(self):
+        self.mock_game.get_players.return_value = self.mock_players
+        self.mock_game.draw.return_value = self.mock_drawn
+
         self.session = Session(self.mock_game)
 
     def test_add_user_should_add_user(self):
@@ -94,7 +99,11 @@ class SessionTest(BasicTest):
         self.assertRaises(UserNotFoundException, self.session.remove_users, users)
 
     def test_get_players_should_get_players_from_game(self):
-        pass
+        players = self.session.get_players()
+
+        self.assertEqual(self.mock_players, players)
 
     def test_draw_should_draw_from_game(self):
-        pass
+        drawn = self.session.draw()
+
+        self.assertEqual(self.mock_drawn, drawn)
