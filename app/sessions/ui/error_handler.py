@@ -16,8 +16,6 @@ class SessionErrorHandler(commands.Cog):
     async def on_command_error(self, ctx, error):
         if ctx.command.qualified_name == 'new_game':
             if isinstance(error, commands.MissingRequiredArgument):
-                # TODO : Missing required argument error handling can be generalized
-                # TODO : Have missing game type argument be its own handling
                 return await ctx.send('Missing requirement argument : game type (fuck_you)')
 
         ignored = (commands.CommandNotFound, commands.UserInputError)

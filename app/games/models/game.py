@@ -21,7 +21,6 @@ class Game:
         self.current_players.append(player)
         return player
 
-    # TODO : Unused
     def remove_player(self, name):
         player = self.get_player_if_present(name)
         player.in_game = False
