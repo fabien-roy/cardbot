@@ -1,6 +1,6 @@
 from unittest.mock import Mock, call
 
-from app.sessions.exceptions import UserAlreadyAddedException
+from app.sessions.exceptions import UserAlreadyAddedException, UserNotFoundException
 from app.sessions.models.sessions import Session
 from tests.sessions.models.build_users import a_user
 from tests.test_basic import BasicTest
@@ -55,22 +55,43 @@ class SessionTest(BasicTest):
         self.assertRaises(UserAlreadyAddedException, self.session.add_users, users)
 
     def test_remove_user_should_remove_user(self):
-        pass
+        self.session.add_user(self.user.name)
+
+        self.session.remove_user(self.user.name)
+
+        self.assertEqual(0, len(self.session.users))
 
     def test_remove_user_should_remove_player_from_game(self):
-        pass
+        self.session.add_user(self.user.name)
+
+        self.session.remove_user(self.user.name)
+
+        self.mock_game.remove_player.assert_called_with(self.user.name)
 
     def test_remove_user_with_nonexistent_user_should_raise_user_not_found_exception(self):
-        pass
+        self.assertRaises(UserNotFoundException, self.session.remove_user, self.user.name)
 
     def test_remove_users_should_remove_users(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+        self.session.add_users(users)
+
+        self.session.remove_users(users)
+
+        self.assertEqual(0, len(self.session.users))
 
     def test_remove_users_should_remove_players_from_game(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+        self.session.add_users(users)
+
+        self.session.remove_users(users)
+
+        calls = [call(self.user.name), call(self.other_user.name)]
+        self.mock_game.remove_player.assert_has_calls(calls)
 
     def test_remove_users_with_nonexistent_user_should_raise_user_not_found_exception(self):
-        pass
+        users = [self.user.name, self.other_user.name]
+
+        self.assertRaises(UserNotFoundException, self.session.remove_users, users)
 
     def test_get_players_should_get_players_from_game(self):
         pass
