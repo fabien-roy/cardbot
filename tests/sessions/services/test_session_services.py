@@ -12,6 +12,7 @@ class SessionServiceTest(BasicTest):
     mock_session = Mock()
     game_type = create_game_type()
     user = a_user().build()
+    other_user = a_user().build()
 
     def setUp(self):
         self.mock_session.game = a_game().with_type(self.game_type).build()
@@ -35,7 +36,20 @@ class SessionServiceTest(BasicTest):
 
         self.assertEqual(self.user.name, name)
 
-    # TODO : Add users tests
+    def test_add_users_should_add_users_to_session(self):
+        users = [self.user.name, self.other_user.name]
+
+        self.service.add_users(users)
+
+        self.mock_session.add_user.assert_called_with(self.user.name)
+        self.mock_session.add_user.assert_called_with(self.other_user.name)
+
+    def test_add_users_should_return_user_names(self):
+        users = [self.user.name, self.other_user.name]
+
+        names = self.service.add_users(users)
+
+        self.assertCountEqual(users, names)
 
     def test_remove_user_should_remove_user_from_session(self):
         self.service.remove_user(self.user.name)
