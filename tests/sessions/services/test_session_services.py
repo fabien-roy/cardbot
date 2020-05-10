@@ -1,5 +1,6 @@
 from unittest.mock import Mock
 
+from app.sessions.exceptions import SessionNotStartedException
 from app.sessions.services.session_services import SessionService
 from tests.games.models.build_games import a_game
 from tests.games.models.create_games import create_game_type
@@ -11,6 +12,7 @@ from tests.test_basic import BasicTest
 class SessionServiceTest(BasicTest):
     mock_session = Mock()
     mock_drawn = Mock()
+    mock_players = Mock()
     game_type = create_game_type()
     user = a_user().build()
     other_user = a_user().build()
@@ -18,6 +20,7 @@ class SessionServiceTest(BasicTest):
     def setUp(self):
         self.mock_session.game = a_game().with_type(self.game_type).build()
         self.mock_session.draw.return_value = self.mock_drawn
+        self.mock_session.get_players.return_value = self.mock_players
         mock_session_factory.create.side_effect = lambda game_type: self.mock_session
 
         self.service = SessionService()
@@ -78,7 +81,15 @@ class SessionServiceTest(BasicTest):
 
         self.assertCountEqual(users, names)
 
-    # TODO : Get players tests
+    def test_get_players_should_get_players(self):
+        players = self.service.get_players()
+
+        self.assertEqual(self.mock_players, players)
+
+    def test_get_players_without_session_should_raise_session_not_started_exception(self):
+        self.service = SessionService()
+
+        self.assertRaises(SessionNotStartedException, self.service.get_players)
 
     def test_draw_should_drawn_from_game(self):
         drawn = self.service.draw()
