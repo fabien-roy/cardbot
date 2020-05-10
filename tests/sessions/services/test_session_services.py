@@ -61,7 +61,20 @@ class SessionServiceTest(BasicTest):
 
         self.assertEqual(self.user.name, name)
 
-    # TODO : Remove users tests
+    def test_remove_users_should_remove_users_from_session(self):
+        users = [self.user.name, self.other_user.name]
+
+        self.service.remove_users(users)
+
+        self.mock_session.remove_user.assert_called_with(self.user.name)
+        self.mock_session.remove_user.assert_called_with(self.other_user.name)
+
+    def test_remove_users_should_return_user_names(self):
+        users = [self.user.name, self.other_user.name]
+
+        names = self.service.remove_users(users)
+
+        self.assertCountEqual(users, names)
 
     # TODO : Get players tests
 
