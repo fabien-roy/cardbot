@@ -8,7 +8,6 @@ from app.games.models.fuck_you_games import FuckYouGame
 from app.games.models.ride_the_bus_games import RideTheBusGame
 
 
-# TODO : Test with game_config
 class GameFactory:
     deck_factory = inject.attr(DeckFactory)
     game_config = inject.attr(GameConfig)

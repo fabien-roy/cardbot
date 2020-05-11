@@ -4,9 +4,6 @@ from app.games.models.ordered_games import OrderedGame
 class FuckYouGame(OrderedGame):
     type = 'Fuck you'
 
-    def __init__(self, deck, rules):
-        super().__init__(deck, rules)
-
     # TODO : Test FuckYouGame.draw
     def draw(self):
         player, card = super().draw()
