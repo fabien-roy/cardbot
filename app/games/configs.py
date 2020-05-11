@@ -4,8 +4,8 @@ from app.games.enums.game_types import GameType
 
 class GameConfig:
     rules_per_game_type = {
-        GameType.fuck_you: default_fuck_you_rules,
-        GameType.ride_the_bus: {}
+        GameType.fuck_you.name: default_fuck_you_rules,
+        GameType.ride_the_bus.name: {}
     }
 
     def get_rules(self, game_type):
