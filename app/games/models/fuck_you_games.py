@@ -10,6 +10,6 @@ class FuckYouGame(OrderedGame):
     # TODO : Test FuckYouGame.draw
     def draw(self):
         player, card = super().draw()
-        result = f'{card.house_value.name} of {card.house_suit.name} \n'
-        result += f'Which stands for : {self.rules.get(card.house_value)} \n'
+        result = f'{card.suit_value.name} of {card.suit_house.name} \n'
+        result += f'Which stands for : {self.rules.get(card.suit_value)} \n'
         return player.name, result
