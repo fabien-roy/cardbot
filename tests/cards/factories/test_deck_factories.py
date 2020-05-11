@@ -11,9 +11,9 @@ class DeckFactoryTest(BasicTest):
     def test_create_should_create_without_duplicate(self):
         deck = self.factory.create()
 
-        hasDuplicates = len(deck.cards) != len(set(deck.cards))
+        has_duplicates = len(deck.cards) != len(set(deck.cards))
 
-        self.assertFalse(hasDuplicates)
+        self.assertFalse(has_duplicates)
 
     def test_create_should_have_normal_deck_length(self):
         deck = self.factory.create()
