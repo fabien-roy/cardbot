@@ -19,11 +19,11 @@ Feel free to ask for any feature. Since this is really just made for fun, anythi
 
 ## Bug reporting
 
-There is a [specific section about bug reporting](https://github.com/ExiledNarwal28/cardbot/blob/master/CONTRIBUTING.md#bug-reporting) in our `CONTRIBUTING.md`. Please refer to it for further information and use the [appropriate issue template](https://github.com/ExiledNarwal28/cardbot/issues/new?assignees=&labels=Bug&template=bug_report.md&title=) for bug reporting.
+There is a [specific section about bug reporting](https://github.com/ExiledNarwal28/cardbot/blob/master/CONTRIBUTING.md#bug-reporting) in our CONTRIBUTING.md. Please refer to it for further information and use the [appropriate issue template](https://github.com/ExiledNarwal28/cardbot/issues/new?assignees=&labels=Bug&template=bug_report.md&title=) for bug reporting.
 
 ## Contributing
 
-Please refer to [`CONTRIBUTING.md`](https://github.com/ExiledNarwal28/cardbot/blob/master/CONTRIBUTING.md) to help with this project.
+Please refer to [CONTRIBUTING.md](https://github.com/ExiledNarwal28/cardbot/blob/master/CONTRIBUTING.md) to help with this project.
 
 ## Commands
 
