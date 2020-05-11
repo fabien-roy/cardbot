@@ -46,8 +46,7 @@ class SessionServiceTest(BasicTest):
 
         self.service.add_users(users)
 
-        self.mock_session.add_user.assert_called_with(self.user.name)
-        self.mock_session.add_user.assert_called_with(self.other_user.name)
+        self.mock_session.add_users.assert_called_with(users)
 
     def test_add_users_should_return_user_names(self):
         users = [self.user.name, self.other_user.name]
@@ -71,8 +70,7 @@ class SessionServiceTest(BasicTest):
 
         self.service.remove_users(users)
 
-        self.mock_session.remove_user.assert_called_with(self.user.name)
-        self.mock_session.remove_user.assert_called_with(self.other_user.name)
+        self.mock_session.remove_users.assert_called_with(users)
 
     def test_remove_users_should_return_user_names(self):
         users = [self.user.name, self.other_user.name]
