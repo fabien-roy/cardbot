@@ -24,6 +24,6 @@ class GameBuilder:
 
     def build(self):
         if self.game_type == GameType.fuck_you:
-            return FuckYouGame(self.deck)
+            return FuckYouGame(self.deck, {})
         if self.game_type == GameType.ride_the_bus:
-            return RideTheBusGame(self.deck)
+            return RideTheBusGame(self.deck, {})

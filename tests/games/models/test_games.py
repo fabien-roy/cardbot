@@ -10,7 +10,7 @@ class GameTest(BasicTest):
     other_player = 'OtherPlayer'
 
     def setUp(self):
-        self.game = Game(self.deck)
+        self.game = Game(self.deck, {})
         self.game.add_player(self.player)
         self.game.add_player(self.other_player)
 
