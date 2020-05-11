@@ -1,9 +1,9 @@
-from app.games.models.game import Game
+from app.games.models.games import Game
 
 
 class OrderedGame(Game):
-    def __init__(self, deck):
-        super().__init__(deck)
+    def __init__(self, deck, rules):
+        super().__init__(deck, rules)
         self.current_no = 0
 
     def add_player(self, name):

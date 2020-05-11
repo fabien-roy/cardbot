@@ -5,8 +5,9 @@ from app.games.models.players import Player
 
 
 class Game:
-    def __init__(self, deck):
+    def __init__(self, deck, rules):
         self.deck = deck
+        self.rules = rules
         self.current_players = []
         self.players = []
 

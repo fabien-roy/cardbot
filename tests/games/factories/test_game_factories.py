@@ -1,8 +1,8 @@
 from app.games.enums.game_types import GameType
 from app.games.exceptions import InvalidGameTypeException
 from app.games.factories.game_factory import GameFactory
-from app.games.models.fuck_you_game import FuckYouGame
-from app.games.models.ride_the_bus_game import RideTheBusGame
+from app.games.models.fuck_you_games import FuckYouGame
+from app.games.models.ride_the_bus_games import RideTheBusGame
 from tests.test_basic import BasicTest
 
 
