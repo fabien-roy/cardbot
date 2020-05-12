@@ -23,15 +23,15 @@ jobs:
       - name: Lint app
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: lint-app
+          command: run lint-app
       - name: Lint tests
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: lint-tests
+          command: run lint-tests
       - name: Unit tests
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: tests-coverage
+          command: run tests-coverage
       - name: Generate coverage report
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
