@@ -13,6 +13,34 @@ Basically, I'm trying to do a somewhat domain-driven application about cards and
 
 I'm doing this more as a small personal challenge than anything else.
 
+## Running this project locally
+
+First, you are going to need to set your bot's token in your env vars (see [run.py](run.py)).
+
+### Install dependencies
+
+```shell script
+pipenv install
+```
+
+### Run application
+
+```shell script
+pipenv run python run.py
+```
+
+### Run tests
+
+```shell script
+pipenv run nose2 tests
+```
+
+### Lint code
+
+```shell script
+pipenv run pylint app tests
+```
+
 ## Feature request
 
 Feel free to ask for any feature. Since this is really just made for fun, anything could be implemented, as long as it kind of make sense. Please use the [appropriate issue template](https://github.com/ExiledNarwal28/cardbot/issues/new?assignees=&labels=Enhancement&template=feature_request.md&title=) for feature requests.
