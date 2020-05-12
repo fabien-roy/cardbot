@@ -35,7 +35,7 @@ jobs:
       - name: Generate coverage report
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: coverage xml
+          command: run coverage xml
       - name: Upload code coverage to codecov
         uses: codecov/codecov-action@v1
         with:
