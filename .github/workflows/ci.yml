@@ -20,14 +20,10 @@ jobs:
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
           command: install -d
-      - name: Lint app
+      - name: Lint app and tests
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: run lint-app
-      - name: Lint tests
-        uses: VaultVulp/action-pipenv@v2.0.1
-        with:
-          command: run lint-tests
+          command: run lint
       - name: Unit tests
         uses: VaultVulp/action-pipenv@v2.0.1
         with:

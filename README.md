@@ -37,8 +37,7 @@ pipenv run tests
 ### Lint code
 
 ```shell script
-pipenv run lint-app
-pipenv run lint-tests
+pipenv run lint
 ```
 
 ## Feature request
