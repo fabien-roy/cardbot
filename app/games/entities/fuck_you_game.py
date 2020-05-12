@@ -1,4 +1,4 @@
-from app.games.models.ordered_games import OrderedGame
+from app.games.entities.ordered_games import OrderedGame
 
 
 class FuckYouGame(OrderedGame):

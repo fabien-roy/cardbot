@@ -1,7 +1,7 @@
 import inject
 
 from app.games.factories.game_factory import GameFactory
-from app.sessions.models.sessions import Session
+from app.sessions.entities.sessions import Session
 
 
 class SessionFactory:

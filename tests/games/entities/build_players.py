@@ -1,5 +1,5 @@
-from app.games.models.players import Player
-from tests.games.models.create_players import create_no, create_name
+from app.games.entities.players import Player
+from tests.games.entities.create_players import create_no, create_name
 
 
 def a_player():

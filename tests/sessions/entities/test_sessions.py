@@ -1,8 +1,8 @@
 from unittest.mock import Mock, call
 
 from app.sessions.exceptions import UserAlreadyAddedException, UserNotFoundException
-from app.sessions.models.sessions import Session
-from tests.sessions.models.build_users import a_user
+from app.sessions.entities.sessions import Session
+from tests.sessions.entities.build_users import a_user
 from tests.test_basic import BasicTest
 
 

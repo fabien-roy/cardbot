@@ -1,4 +1,4 @@
-from app.cards.models.cards import Card
+from app.cards.entities.cards import Card
 
 
 class CardFactory:

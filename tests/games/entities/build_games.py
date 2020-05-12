@@ -1,7 +1,7 @@
 from app.games.enums.game_types import GameType
-from app.games.models.fuck_you_game import FuckYouGame
-from app.games.models.ride_the_bus_game import RideTheBusGame
-from tests.games.models.create_games import create_game_type, create_deck
+from app.games.entities.fuck_you_game import FuckYouGame
+from app.games.entities.ride_the_bus_game import RideTheBusGame
+from tests.games.entities.create_games import create_game_type, create_deck
 
 
 def a_game():

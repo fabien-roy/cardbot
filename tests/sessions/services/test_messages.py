@@ -1,6 +1,6 @@
 from app.sessions.ui.messages import new_game_message, add_player_message, add_players_message, \
     print_players_message, remove_player_message, remove_players_message, draw_message
-from tests.games.models.build_players import a_player
+from tests.games.entities.build_players import a_player
 from tests.test_basic import BasicTest
 
 

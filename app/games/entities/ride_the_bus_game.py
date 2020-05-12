@@ -1,5 +1,5 @@
 from app.games.enums.game_types import GameType
-from app.games.models.game import Game
+from app.games.entities.game import Game
 
 
 class RideTheBusGame(Game):

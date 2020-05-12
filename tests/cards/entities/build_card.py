@@ -1,5 +1,5 @@
-from app.cards.models.cards import Card
-from tests.cards.models.create_cards import create_value
+from app.cards.entities.cards import Card
+from tests.cards.entities.create_cards import create_value
 
 
 def a_card():

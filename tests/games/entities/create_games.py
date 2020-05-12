@@ -1,5 +1,5 @@
 from app.games.enums.game_types import GameType
-from tests.cards.models.build_deck import a_deck
+from tests.cards.entities.build_deck import a_deck
 from tests.create_basic import random_enum
 
 

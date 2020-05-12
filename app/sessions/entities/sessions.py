@@ -1,5 +1,5 @@
 from app.sessions.exceptions import UserNotFoundException, UserAlreadyAddedException
-from app.sessions.models.users import User
+from app.sessions.entities.users import User
 
 
 class Session:
