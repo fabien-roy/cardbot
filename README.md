@@ -20,25 +20,26 @@ First, you are going to need to set your bot's token in your env vars (see [run.
 ### Install dependencies
 
 ```shell script
-pipenv install
+pipenv install -d
 ```
 
 ### Run application
 
 ```shell script
-pipenv run python run.py
+pipenv run app
 ```
 
 ### Run tests
 
 ```shell script
-pipenv run nose2 tests
+pipenv run tests
 ```
 
 ### Lint code
 
 ```shell script
-pipenv run pylint app tests
+pipenv run lint-app
+pipenv run lint-tests
 ```
 
 ## Feature request
