@@ -4,8 +4,8 @@ from app.cards.factories.deck_factories import DeckFactory
 from app.games.configs import GameConfig
 from app.games.enums.game_types import GameType
 from app.games.exceptions import InvalidGameTypeException
-from app.games.models.fuck_you_games import FuckYouGame
-from app.games.models.ride_the_bus_games import RideTheBusGame
+from app.games.entities.fuck_you_games import FuckYouGame
+from app.games.entities.ride_the_bus_games import RideTheBusGame
 
 
 class GameFactory:

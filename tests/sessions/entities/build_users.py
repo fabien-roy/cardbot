@@ -1,5 +1,5 @@
-from app.sessions.models.users import User
-from tests.sessions.models.create_users import create_name
+from app.sessions.entities.users import User
+from tests.sessions.entities.create_users import create_name
 
 
 def a_user():

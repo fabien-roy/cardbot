@@ -1,4 +1,4 @@
-from app.games.models.games import Game
+from app.games.entities.games import Game
 
 
 class OrderedGame(Game):

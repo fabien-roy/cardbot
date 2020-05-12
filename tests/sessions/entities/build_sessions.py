@@ -1,5 +1,5 @@
-from app.sessions.models.sessions import Session
-from tests.sessions.models.create_sessions import create_game
+from app.sessions.entities.sessions import Session
+from tests.sessions.entities.create_sessions import create_game
 
 
 def a_session():

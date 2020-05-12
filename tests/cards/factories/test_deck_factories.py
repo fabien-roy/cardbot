@@ -1,5 +1,5 @@
 from app.cards.factories.deck_factories import DeckFactory
-from app.cards.models.cards import NORMAL_DECK_LENGTH
+from app.cards.entities.cards import NORMAL_DECK_LENGTH
 from tests.test_basic import BasicTest
 
 

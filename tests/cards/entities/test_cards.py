@@ -1,6 +1,6 @@
 from app.cards.exceptions import EmptyDeckException
-from app.cards.models.cards import Card
-from app.cards.models.decks import Deck
+from app.cards.entities.cards import Card
+from app.cards.entities.decks import Deck
 from tests.test_basic import BasicTest
 
 

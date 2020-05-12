@@ -2,10 +2,10 @@ from unittest.mock import Mock
 
 from app.sessions.exceptions import SessionNotStartedException
 from app.sessions.services.session_services import SessionService
-from tests.games.models.build_games import a_game
-from tests.games.models.create_games import create_game_type
+from tests.games.entities.build_games import a_game
+from tests.games.entities.create_games import create_game_type
 from tests.sessions.factories.mock_session_factories import mock_session_factory
-from tests.sessions.models.build_users import a_user
+from tests.sessions.entities.build_users import a_user
 from tests.test_basic import BasicTest
 
 

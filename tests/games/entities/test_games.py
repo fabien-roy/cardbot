@@ -1,6 +1,6 @@
-from app.cards.models.cards import Card
+from app.cards.entities.cards import Card
 from app.games.exceptions import PlayerAlreadyAddedException, PlayerNotFoundException
-from app.games.models.games import Game
+from app.games.entities.games import Game
 from tests.test_basic import BasicTest
 
 

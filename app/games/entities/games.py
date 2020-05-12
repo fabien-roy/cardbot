@@ -1,7 +1,7 @@
 from app.games.exceptions import PlayerNotFoundException, PlayerAlreadyAddedException
 
 
-from app.games.models.players import Player
+from app.games.entities.players import Player
 
 
 class Game:

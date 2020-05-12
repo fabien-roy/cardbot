@@ -1,5 +1,5 @@
-from app.cards.models.decks import Deck
-from tests.cards.models.create_decks import create_cards
+from app.cards.entities.decks import Deck
+from tests.cards.entities.create_decks import create_cards
 
 
 def a_deck():

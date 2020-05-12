@@ -3,8 +3,8 @@ from unittest.mock import Mock
 from app.games.enums.game_types import GameType
 from app.games.exceptions import InvalidGameTypeException
 from app.games.factories.game_factory import GameFactory
-from app.games.models.fuck_you_games import FuckYouGame
-from app.games.models.ride_the_bus_games import RideTheBusGame
+from app.games.entities.fuck_you_games import FuckYouGame
+from app.games.entities.ride_the_bus_games import RideTheBusGame
 from tests.cards.factories.mock_deck_factories import mock_deck_factory
 from tests.games.mock_configs import mock_game_config
 from tests.test_basic import BasicTest

@@ -3,8 +3,8 @@ from random import sample
 import inject
 
 from app.cards.factories.card_factories import CardFactory
-from app.cards.models.cards import NORMAL_DECK_LENGTH
-from app.cards.models.decks import Deck
+from app.cards.entities.cards import NORMAL_DECK_LENGTH
+from app.cards.entities.decks import Deck
 
 
 class DeckFactory:
