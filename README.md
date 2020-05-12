@@ -1,7 +1,6 @@
 # Cardbot
 
 [![Build](https://github.com/ExiledNarwal28/cardbot/workflows/Build/badge.svg)](https://github.com/ExiledNarwal28/cardbot/actions?query=workflow%3ABuild)
-[![Deploy](https://heroku-badge.herokuapp.com/?app=discord-cardbot)](https://dashboard.heroku.com/apps/discord-cardbot)
 [![codecov](https://codecov.io/gh/ExiledNarwal28/cardbot/branch/master/graph/badge.svg?token=UTCU37LVR5)](https://codecov.io/gh/ExiledNarwal28/cardbot)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/03793893ffce450a9fdd6b94483fdd29)](https://www.codacy.com/manual/ExiledNarwal28/cardbot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ExiledNarwal28/cardbot&amp;utm_campaign=Badge_Grade)
 [![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
@@ -20,25 +19,26 @@ First, you are going to need to set your bot's token in your env vars (see [run.
 ### Install dependencies
 
 ```shell script
-pipenv install
+pipenv install -d
 ```
 
 ### Run application
 
 ```shell script
-pipenv run python run.py
+pipenv run app
 ```
 
 ### Run tests
 
 ```shell script
-pipenv run nose2 tests
+pipenv run tests
 ```
 
 ### Lint code
 
 ```shell script
-pipenv run pylint app tests
+pipenv run lint-app
+pipenv run lint-tests
 ```
 
 ## Feature request

@@ -3,14 +3,22 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
-nose2 = "==0.9.2"
-faker = "==4.0.3"
-pylint = "==2.5.2"
-
 [packages]
 discord = "==1.0.1"
 inject = "==4.1.2"
 
+[dev-packages]
+coverage = "==5.1.0"
+nose2 = "==0.9.2"
+faker = "==4.0.3"
+pylint = "==2.5.2"
+
 [requires]
 python_version = "3.8"
+
+[scripts]
+app = "python run.py"
+tests = "nose2 tests"
+tests-coverage = "coverage run -m nose2 tests"
+lint-app = "pylint --output-format=text app"
+lint-tests = "pylint --output-format=text tests"
