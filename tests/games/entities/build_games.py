@@ -1,6 +1,6 @@
 from app.games.enums.game_types import GameType
-from app.games.entities.fuck_you_game import FuckYouGame
-from app.games.entities.ride_the_bus_game import RideTheBusGame
+from app.games.entities.fuck_you_games import FuckYouGame
+from app.games.entities.ride_the_bus_games import RideTheBusGame
 from tests.games.entities.create_games import create_game_type, create_deck
 
 
@@ -24,6 +24,6 @@ class GameBuilder:
 
     def build(self):
         if self.game_type == GameType.fuck_you:
-            return FuckYouGame(self.deck)
+            return FuckYouGame(self.deck, {})
         if self.game_type == GameType.ride_the_bus:
-            return RideTheBusGame(self.deck)
+            return RideTheBusGame(self.deck, {})

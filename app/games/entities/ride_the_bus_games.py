@@ -1,12 +1,12 @@
 from app.games.enums.game_types import GameType
-from app.games.entities.game import Game
+from app.games.entities.games import Game
 
 
 class RideTheBusGame(Game):
     type = GameType.ride_the_bus.value
 
-    def __init__(self, deck):
-        super().__init__(deck)
+    def __init__(self, deck, rules):
+        super().__init__(deck, rules)
         self.dealer = None
         self.player = None
 

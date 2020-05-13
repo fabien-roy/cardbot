@@ -1,6 +1,6 @@
 from app.cards.entities.cards import Card
 from app.games.exceptions import PlayerAlreadyAddedException, PlayerNotFoundException
-from app.games.entities.game import Game
+from app.games.entities.games import Game
 from tests.test_basic import BasicTest
 
 
@@ -10,7 +10,7 @@ class GameTest(BasicTest):
     other_player = 'OtherPlayer'
 
     def setUp(self):
-        self.game = Game(self.deck)
+        self.game = Game(self.deck, {})
         self.game.add_player(self.player)
         self.game.add_player(self.other_player)
 
