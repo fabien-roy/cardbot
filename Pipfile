@@ -5,7 +5,7 @@ verify_ssl = true
 
 [packages]
 discord = "==1.0.1"
-inject = "==4.1.2"
+inject = "==4.2.0"
 
 [dev-packages]
 coverage = "==5.1.0"
